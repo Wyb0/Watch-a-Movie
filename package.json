@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/Wyb0/Watch-a-Movie/issues"
   },
-  "homepage": "https://github.com/Wyb0/Watch-a-Movie#readme"
+  "homepage": "https://github.com/Wyb0/Watch-a-Movie#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.1",
+    "express-handlebars": "^3.0.0"
+  }
 }
