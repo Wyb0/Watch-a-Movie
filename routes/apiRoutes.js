@@ -1,32 +1,21 @@
 var newMovie = require("../data/newMovie.js")
 var watchedMovie = require("../data/watchedMovie.js")
+var express = require("express")
 
-function API(app, __dirname) {
-    
-    app.post("/dino/new", function (req, res) {
+var app = express();
 
-       
-        var formData = req.body;
-        
-        dinoLeft.push(formData);
-        
-        res.json(dinoLeft);
+function moviePush(app, __dirname) {
+    app.post("/movie/added", function (request, response) {
+        var movieInput = req.body;
+        newMovie.push(movieInput);
+        res.json(newMovie)
+    })
 
-    });
-
-    // move dino to right array
-    app.post("/dino/done", function (req, res) {
-
-        // walks the dino and moves to right array
-        var formData2 = req.body;
-        dinoRight.push(formData2);
-        // captures the index of dino to remove from left array
-        var killit = formData2.dinoID;
-        // removes dino from left array
-        dinoLeft.splice(killit, 1);
-        // returns both arrays 
-        res.json({ sdinoLeft: dinoLeft,sdinoRight: dinoRight})
-    });
+    app.post("/movie/watched", function (request, response) {
+        var movieWatched = req.body;
+        watchedMovie.push(movieWatched);
+        res.json(movieWatched)
+    })
 }
 
-module.exports = apiStuff;
+module.exports = pushes

@@ -24,6 +24,14 @@
             <button type="button" class="btn btn-default" id="submitButton">Submit</button>
         </form>
 
+        <div id="movie2watch">
+            <h3>Movies to Watch</h3>
+        </div>
+
+        <div id="moviewatched">
+            <h3>Movies Watched</h3>
+        </div>
+
     </body>
 
     <script>
@@ -31,6 +39,12 @@
             //console.log("Submit Button Clicked")
             var movieAdded = $("#movieInput").val();
                 console.log(movieAdded)
+            $.post(movieAdded)
+                .done(function(movieNew){
+                    for (i=0; movieNew.length; i++) {
+                        $("#movie2watch").append[i];
+                    }
+               })
         })
     </script>
 </html>
