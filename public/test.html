@@ -14,6 +14,21 @@
         <link href="assets/css/movie_style.css" rel="stylesheet">
     </head>
     <body>
-    
+        <h1>Watch a Movie!</h1>
+
+        <form>
+            <br>
+            <input type="text" name="addMovie" id="movieInput" placeholder="Add a Movie!">
+            <br>
+            <br>
+            <button type="button" class="btn btn-default" id="submitButton">Submit</button>
+        </form>
+
     </body>
+
+    <script>
+        $(document).on("click", "#submitButton", function (event){
+            console.log("Sumbit Button Clicked")
+        })
+    </script>
 </html>
