@@ -27,8 +27,10 @@
     </body>
 
     <script>
-        $(document).on("click", "#submitButton", function (event){
-            console.log("Sumbit Button Clicked")
+        $("#submitButton").on("click", function(event){
+            //console.log("Submit Button Clicked")
+            var movieAdded = $("#movieInput").val();
+                console.log(movieAdded)
         })
     </script>
 </html>
