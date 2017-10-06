@@ -39,12 +39,18 @@
             //console.log("Submit Button Clicked")
             var movieAdded = $("#movieInput").val();
                 console.log(movieAdded)
-            $.post(movieAdded)
+            $.post("/movie/added", movieAdded)
                 .done(function(movieNew){
                     for (i=0; movieNew.length; i++) {
                         $("#movie2watch").append[i];
                     }
                })
         })
+
+        //add button to allow movie to be moved to watch div
+
+        //function to move movie to watched array
+
+        //would clear div of movie when watched
     </script>
 </html>

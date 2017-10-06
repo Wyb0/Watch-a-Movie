@@ -13,8 +13,11 @@ app.set("view engine", "handlebars");
 app.use(bodyParser.urlencoded({extended: true }));
 app.use(bodyParser.json());
 
-var apiRoutes = require(".routes/apiRoutes.js")
+var apiRoutes = require("./routes/apiRoutes.js")
 apiRoutes(app, __dirname)
+
+var htmlRoutes = require("./routes/htmlRoutes.js");
+htmlRoutes(app, __dirname);
 
 app.listen(PORT, function(){
     console.log("Listening on Port: " + PORT)

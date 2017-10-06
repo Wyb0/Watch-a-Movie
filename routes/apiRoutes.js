@@ -18,4 +18,4 @@ function moviePush(app, __dirname) {
     })
 }
 
-module.exports = pushes
+module.exports = moviePush
