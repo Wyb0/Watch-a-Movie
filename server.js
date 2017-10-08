@@ -10,7 +10,7 @@ var PORT = process.env.PORT || 8000;
 app.engine("handlebars", exphbrs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-app.use(bodyParser.urlencoded({extended: true }));
+app.use(bodyParser.urlencoded({extended: false }));
 app.use(bodyParser.json());
 
 var apiRoutes = require("./routes/apiRoutes.js")
