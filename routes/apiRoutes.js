@@ -1,5 +1,4 @@
-var newMovie = require("../data/newMovie.js")
-var watchedMovie = require("../data/watchedMovie.js")
+var connection = require("../data/connection.js")
 var express = require("express")
 
 var app = express();
@@ -7,15 +6,15 @@ var app = express();
 function moviePush(app, __dirname) {
     app.post("/movie/added", function (request, response) {
         var movieInput = req.body;
-        newMovie.push(movieInput);
+        //connection.push(movieInput);
         res.json(newMovie)
     })
 
     app.post("/movie/watched", function (request, response) {
         var movieWatched = req.body;
-        watchedMovie.push(movieWatched);
+        //connection.push(movieWatched);
         res.json(movieWatched)
     })
 }
 
-module.exports = moviePush
+module.exports = apiRoutes
