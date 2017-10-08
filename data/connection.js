@@ -2,7 +2,7 @@ var mysql = require("mysql")
 
 var connection
 
-connection(function () {
+function connection() {
     connection.connect(function(err){
         if (err) {
             console.log("Error: " + err.stack);
@@ -10,5 +10,6 @@ connection(function () {
         }
         console.log("Connected: " + connection.threadID)
     })
-})
+}
     
+module.exports = connection
