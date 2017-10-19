@@ -1,9 +1,6 @@
 var connection = require("../data/connection.js")
-var express = require("express")
 
-var app = express();
-
-function moviePush(app, __dirname) {
+module.exports = function(app){
     app.post("/movie/added", function (request, response) {
         var movieInput = req.body;
         //connection.push(movieInput);
@@ -15,6 +12,4 @@ function moviePush(app, __dirname) {
         //connection.push(movieWatched);
         res.json(movieWatched)
     })
-}
-
-module.exports = apiRoutes
+};

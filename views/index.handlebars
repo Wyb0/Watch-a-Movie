@@ -1,39 +1,32 @@
 <body>
         <h1>Watch a Movie!</h1>
 
-        <form>
+        <form action="/movie/added" method="POST">
             <br>
             <input type="text" name="addMovie" id="movieInput" placeholder="Add a Movie!">
             <br>
             <br>
-            <button type="button" class="btn btn-default" id="submitButton">Submit</button>
+            <button type="submit" class="btn btn-default" id="submitButton">Submit</button>
         </form>
 
+            <!-- Handlebars if/else statement -->
         <div id="movie2watch">
             <h3>Movies to Watch</h3>
+             {{#each index}}
+                {{#unless this.movieWatched}}
+            <p>{{this.movie}}</p>
+                {{/unless}}
+            {{/each}}
         </div>
 
+            
         <div id="moviewatched">
             <h3>Movies Watched</h3>
+            {{#each index}}
+                {{#if this.movieWatched}}
+            <p>{{this.movie}}</p>
+                {{/if}}
+            {{/each}}
         </div>
-
-    </body>
-        <h1>Watch a Movie!</h1>
-
-        <form>
-            <br>
-            <input type="text" name="addMovie" id="movieInput" placeholder="Add a Movie!">
-            <br>
-            <br>
-            <button type="button" class="btn btn-default" id="submitButton">Submit</button>
-        </form>
-
-        <div id="movie2watch">
-            <h3>Movies to Watch</h3>
-        </div>
-
-        <div id="moviewatched">
-            <h3>Movies Watched</h3>
-        </div>
-
+            
     </body>

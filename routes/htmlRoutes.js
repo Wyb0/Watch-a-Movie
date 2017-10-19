@@ -1,13 +1,18 @@
 var connection = require('../data/connection.js');
 var express = require('express');
 var path = require('path');
+var mysql = require('mysql');
 
-const html_routing = (app, __dirname)=>{
-    app.get('/', (req,res)=>{
-        console.log('routed to html');
-        // res.render('index.handlebars');
-        res.sendFile(path.join(__dirname, "/public/test.html"));        
+
+module.exports = function(app){
+
+    app.get('/', function(req, res){
+        connection.query("SELECT * FROM movies", function(error, response){
+
+            if (error) throw error;
+            res.render("index", {
+                index: response
+            })
+        })
     })
 }
-
-module.exports = htmlRoutes;
